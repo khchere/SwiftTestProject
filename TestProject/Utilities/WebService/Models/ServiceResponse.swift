@@ -10,12 +10,12 @@ import Foundation
 
 struct ServiceResponse<T: Codable>: Codable {
 
-  struct Data<U: Codable>: Codable {
-    enum CodingKeys: String, CodingKey {
-      case response = "Dataset"
-    }
-    let response: [U]
-  }
+//  struct Data<U: Codable>: Codable {
+//    enum CodingKeys: String, CodingKey {
+//      case response = "Dataset"
+//    }
+//    let response: [U]
+//  }
   
 //  private enum CodingKeys: String, CodingKey {
 //    case userToken, status, message, data
@@ -28,11 +28,11 @@ struct ServiceResponse<T: Codable>: Codable {
   private enum CodingKeys: String, CodingKey {
     case sp_rtn, is_scalar, row_count, error_msg, Dataset
   }
-  let row_count: String?
+  let row_count: Int?
   let is_scalar: String?
   let sp_rtn: Int?
   let error_msg: String?
-  let Dataset: Data<T>
+  let Dataset: [T]
 }
 
 //func responseKey(_ type: Codable) -> String {

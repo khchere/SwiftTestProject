@@ -1,0 +1,83 @@
+<html lang="ko"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+                <title>넥슨 OTP 인증</title>
+                <link rel="stylesheet" type="text/css" href="https://ssl.nx.com/S3/Portal/Nexon/2010/popup/layout_ssl.css">
+                    <link rel="stylesheet" type="text/css" href="https://ssl.nx.com/S3/Portal/Nexon/2010/popup/nxotp.css">
+                        <script type="text/ecmascript" src="../js/jquery-1.12.4.min.js"></script>
+                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js">
+                            <!--
+                            document.domain = 'nexon.com';
+                            //-->
+                            </script>
+                        <script type="text/javascript">
+                            function layer_alert(msg, isShowBtn) {
+                                if (isShowBtn === false) {
+                                    $("#btnConfirm").css('display', 'none');
+                                }
+                                else {
+                                    $("#btnConfirm").css('display', 'inline');
+                                }
+                                
+                                var layerPosition = function() {
+                                    var winH = $(window).height();
+                                    var layerW = $("#popLayer").width();
+                                    var layerH = $("#popLayer").height();
+                                    var leftV = (winW - layerW) / 2;
+                                    var topV = (winH - layerH) / 2 - 20;
+                                    $("#popLayer").css({ "left": leftV + "px" });
+                                    if (winH < 400) {
+                                        $("#popLayer").css({ "top": 10 + "px" });
+                                    } else {
+                                        $("#popLayer").css({ "top": topV + "px" });
+                                    };
+                                    $("#popLayer, .dimmed").css("display", "inline");
+                                };
+                                
+                                $('#msg_alert').html(msg);
+                                
+                                layerPosition();
+                                $(window).resize(function() {
+                                                 layerPosition();
+                                                 });
+                                                 $("#popLayer .closeBt button").bind("click", function() {
+                                                                                     $("#popLayer, .dimmed").css("display", "none");
+                                                                                     });
+                            }
+                        </script>
+</head>
+<!--720/967-->
+<body id="m_body">
+    <form name="m_form" method="post" action="auth_nxotp_end.aspx" id="m_form">
+        <div>
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="YKhUl5zlyUul4NMg/31YNW0q5nXtwPo+LTYmN2s5IWgBKCgOs1C9Da8syCt9gW8UT6KHb4+Z74oSU+P9B+L7TcY4+WIqtxI/sLU3kC5/sUDIuF/FLhzrj7Lj16EI6xfIoLkfAg==">
+        </div>
+        
+        
+        <script type="text/javascript">
+            //<![CDATA[
+            setTimeout( function() {
+                if( typeof( opener.PlayPass.SetPlayPassAuth ) != 'undefined' ) {
+                       opener.PlayPass.SetPlayPassAuth(''); window.close();  }
+                else {layer_alert('인증처리를 완료 할 수 없습니다.', true);} }, 1000)//]]>
+            </script>
+        
+        <div>
+            
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5BA598CD">
+        </div>
+        <div class="nxOTPpop">
+            <span class="dimmed" style="display:none;"></span>
+            <div id="popLayer" style="display:none;">
+                <h2>안내</h2>
+                <p>
+                <span id="msg_alert"></span>
+                <button type="button" id="btnConfirm" onclick="window.close();">확인</button>
+                </p>
+                <div class="closeBt" style="display:none;"><button type="button" id="btnClose"><span class="hiddenTit">닫기</span></button></div>
+            </div>
+        </div>
+    </form>
+    
+</body></html>

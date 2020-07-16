@@ -1,0 +1,4 @@
+window.close = function () {
+    window.location.assign("back://"+ window.location)
+};
+

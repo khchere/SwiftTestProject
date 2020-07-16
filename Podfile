@@ -6,5 +6,6 @@ target 'TestProject' do
   use_frameworks!
 
   # Pods for TestProject
-  pod 'Alamofire', '~> 4.9.1'
+  pod 'Alamofire', '~> 5.1.0'
+  pod 'Kingfisher', '~> 5.0'
 end

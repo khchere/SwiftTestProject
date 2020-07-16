@@ -13,5 +13,6 @@ let SUB_URL_PATH = BASE_URL + "/"
 
 let loginURL = SUB_URL_PATH + "Login"
 let getPostListURL = SUB_URL_PATH + "Sns/PostList.aspx"
+let getPostCommentList = SUB_URL_PATH + "Sns/PostCommentList.aspx"
 let getmyPeopleReadURL = SUB_URL_PATH + "SAPeople/myPeopleRead.aspx"
 
